@@ -18,7 +18,7 @@ if __name__ == "__main__":
     print(f"Текущая рабочая директория изменена на: {os.getcwd()}")
 
     file_name = "test_file.txt"
-    with open(file_name, 'w') as my_file:
+    with open(file_name, "w") as my_file:
         my_file.write("Привет, мир!")
     print(f"Создан файл: {file_name}")
 
