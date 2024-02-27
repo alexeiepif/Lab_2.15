@@ -40,17 +40,19 @@ if __name__ == "__main__":
         if "ei" in word:
             return False
 
-    with open("Lab_2.15/program/file_ind_2.txt", "r") as file:
-        for line in file:
-            for word in re.findall(r"\b\w*(?:ei|ie)\w*\b", line, re.I):
-                if word.lower() == "weird":  # Исключение
-                    words_follow_rule.add(word.lower())
-                elif word.lower() == "wierd":  # Неправильное исключение
-                    words_break_rule.add(word.lower())
-                elif check_word(word.lower()):
-                    words_follow_rule.add(word.lower())
-                else:
-                    words_break_rule.add(word.lower())
+    with open("Lab_2.15/program/file_ind_2.txt", "r") as file_in:
+        data_in = file_in.readlines()
+        
+    for line in data_in:
+        for word in re.findall(r"\b\w*(?:ei|ie)\w*\b", line, re.I):
+            if word.lower() == "weird":  # Исключение
+                words_follow_rule.add(word.lower())
+            elif word.lower() == "wierd":  # Неправильное исключение
+                words_break_rule.add(word.lower())
+            elif check_word(word.lower()):
+                words_follow_rule.add(word.lower())
+            else:
+                words_break_rule.add(word.lower())
 
     print("Слова, следующие правилу:")
     for word in words_follow_rule:
