@@ -12,7 +12,7 @@ if __name__ == "__main__":
             file=fileptr,
         )
         print(
-            "UTF-8 is capable of encoding " +
+            "UTF-8 is capable of encoding "
             "all 1,112,064 valid character code points.",
             file=fileptr,
         )
